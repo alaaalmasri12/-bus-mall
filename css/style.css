@@ -1,0 +1,62 @@
+body
+{
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    margin: 10px;
+}
+.logo h1
+{
+color: #71717c;
+float: left;
+}
+
+.main-nav ul li {
+    display: inline-block;
+    margin-top: 2.5%;
+    margin-left: 20px;
+}
+.main-nav ul li a {
+    text-decoration: none;
+    color: gray;
+    font-size: 20px;
+}
+.main-nav ul li a:hover
+{
+    color: skyblue;
+}
+.right-nav
+{
+    float: right;
+    width: 20%;
+    margin-top: 26px;
+}
+ion-icon
+{
+    margin-right: 10px;
+    color: #828385;
+}
+.product-box
+{
+    display: inline-block;
+}
+.product-box img {
+    width: 50%;
+}
+.product-box {
+    display: inline-block;
+    width: 30%;
+}
+.products-container
+{
+    margin-top: 8%;
+    margin-left: 20%;
+}
+.display-button
+{
+    text-align: center;
+    width: 75%;
+    margin-bottom: 45px;
+}
