@@ -64,6 +64,12 @@ function render()
 
   rightp = products.all[randomnumber(0,products.all.length-1)];
   console.log(rightp);
+  while(leftp === rightp||leftproduct ===centerp ||centerp===rightp ||centerp === leftp)
+  {
+    console.log("code is executed");
+    render();
+
+  }
   leftproduct.setAttribute('src',leftp.imagePath);
   leftproduct.setAttribute('alt',leftp.ProductName);
   leftproduct.setAttribute('title',leftp.ProductName);
@@ -92,12 +98,7 @@ function handleClickOnProduct(event)
       totalclicks++;
       leftp.views++;
       rightp.views++;
-      while(leftp === rightp||leftproduct ===centerp ||centerp===rightp ||centerp === leftp)
-      {
-        console.log("code is executed");
-        render();
-
-      }
+     
       render();
     }
   }  else {
@@ -121,7 +122,7 @@ function randomnumber(min,max)
 {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-=======
+
 'use script';
 
 var products=
