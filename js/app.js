@@ -184,32 +184,87 @@ function displaychart() {
   });
 }
 
-var sounds = [
-  new Audio("/audio/Blinding_Lights.mp3"),
-  new Audio("/sounds/Halsey-Graveyard.mp3"),
-];
- 
-url = 'audio/Halsey-Graveyard.mp3';
-const myAudio = new Audio(url);
+// var Song = function(artist, audio) {
+//   this.artist = artist;
+//     this.audio = audio;
+//     return this;
+//   };
+  
+//   Song.prototype = {
+//       playSound: function() {
+//       var audio = document.createElement('audio');
+//       audio.src = this.audio;
+//       audio.play();
+//       if (audio.play()== true) {
+//         helloSound.pause();
+//     } else {
+//         goodbyeSound.play();
+//     }
+//     }
+//   };
+  
+//   // Create animal objects
+//   var theweekend = new Song("blinding-light", "audio/Blinding_Lights.mp3"),
+//           Halsey = new Song("graveyard", "audio/Halsey-Graveyard.mp3"),
+     
+//    songs = [theweekend, Halsey];
+  
+//   function playRandomSong() {
+//        var sound = songs[Math.floor(Math.random() * songs.length)];
+//      sound.playSound();
 
-var btn = document.getElementById('btn');
-btn.addEventListener('click', function () {
-  PlayFunc(myAudio, 3);
-});
+//   }
+// var btn=document.getElementById("btn");
+// btn.addEventListener("dblclick",function(){
+  
 
-function PlayFunc(target, RepeatCount) {
-  var soundFunc = function () {
-    RepeatCount--;
-    target.currentTime = 0;
-    if (RepeatCount > 0) {
-      target.play();
-    }
-    else {
-      target.stop();
-      target.removeEventListener('ended', soundFunc);
-    }
+// })
+var songs=['Blinding_Lights.mp3','Halsey-Graveyard.mp3'];
+var song=new Audio();
+var currentSong=0;
+window.onload=playsong;
+function playsong()
+{
+  song.src="audio/"+songs[currentSong];
+  song.play();
+}
+function playorstopsong()
+{
+  if(song.paused)
+  {
+    song.play();
+    document.getElementById("plays").setAttribute("name","pause-circle-outline");
+  }
+  else
+  {
+    song.pause();
+    document.getElementById("plays").setAttribute("name","play-outline");
 
   }
-  target.addEventListener('ended', soundFunc)
-  target.play();
+}
+document.getElementById("play").addEventListener("click",playorstopsong);
+document.getElementById("next").addEventListener("click",next);
+document.getElementById("pre").addEventListener("click",prev);
+document.getElementById("play").addEventListener("dblclick",function(){
+  song.pause();
+});
+
+
+function next()
+{
+  currentSong++;
+  if(currentSong>2)
+  {
+    currentSong=0
+  }
+  playsong();
+}
+function prev()
+{
+  currentSong--;
+  if(currentSong<0)
+  {
+    currentSong=2;
+  }
+  playsong();
 }
