@@ -3,6 +3,7 @@ var totalview = 0;
 var totalclicks=0;
 votes=[];
 views=[];
+var usedimages=[];
 var products =
   [
 
@@ -35,15 +36,15 @@ var leftproduct = document.getElementById("leftproduct");
 var centerproduct = document.getElementById("centerproduct");
 var rightproduct = document.getElementById("rightproduct");
 var imagesection = document.querySelector(".products-container");
-leftproduct.src = `assets/${products[0]}`;
-leftproduct.alt = products[0].split(".",1);
-leftproduct.title = products[0].split(".",1);
-centerproduct.src = `assets/${products[1]}`;
-centerproduct.alt = products[1].split(".",1);
-centerproduct.title = products[1].split(".",1);
-rightproduct.setAttribute('src', `assets/${products[2]}`);
-rightproduct.setAttribute('alt', products[2]);
-rightproduct.setAttribute('title', products[2]);
+// leftproduct.src = `assets/${products[0]}`;
+// leftproduct.alt = products[0].split(".",1);
+// leftproduct.title = products[0].split(".",1);
+// centerproduct.src = `assets/${products[1]}`;
+// centerproduct.alt = products[1].split(".",1);
+// centerproduct.title = products[1].split(".",1);
+// rightproduct.setAttribute('src', `assets/${products[2]}`);
+// rightproduct.setAttribute('alt', products[2]);
+// rightproduct.setAttribute('title', products[2]);
 function Productitem(ProductName, imagePath, clicks, views) {
   this.ProductName = ProductName;
   this.imagePath = `assets/${this.ProductName}`;
@@ -64,11 +65,19 @@ function render() {
   centerp = products.all[randomnumber(0, products.all.length - 1)];
 
   rightp = products.all[randomnumber(0, products.all.length - 1)];
-  while ((leftp === rightp) || (leftp === centerp) || (centerp === rightp) || (centerp === leftp)) {
+  while ((leftp === rightp) || (leftp === centerp) || (centerp === rightp) || (centerp === leftp)||usedimages.includes(leftp)||usedimages.includes(centerp)||usedimages.includes(rightp)) {
     console.log("code is executed");
-    render();
+    leftp = products.all[randomnumber(0, products.all.length - 1)];
 
+    centerp = products.all[randomnumber(0, products.all.length - 1)];
+  
+    rightp = products.all[randomnumber(0, products.all.length - 1)];
   }
+
+  usedimages=[];
+  usedimages.push(leftp.ProductName);
+  usedimages.push(centerp.ProductName);
+  usedimages.push(rightp.ProductName);
 
   leftproduct.setAttribute('src', leftp.imagePath);
   leftproduct.setAttribute('alt', leftp.ProductName);
@@ -155,11 +164,53 @@ function displaychart() {
         label: '# of Votes' + `${totalclicks}`,
         data: votes,
         backgroundColor: [
+          'rgba(255, 99, 132, 0.2)',          
           'rgba(255, 99, 132, 0.2)',
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(255, 99, 132, 0.2)',
+
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(255, 99, 132, 0.2)',          
+          'rgba(255, 99, 132, 0.2)',          
+          'rgba(255, 99, 132, 0.2)',          
+          'rgba(255, 99, 132, 0.2)',          
+          'rgba(255, 99, 132, 0.2)',          
+
+
 
         ],
         borderColor: [
-          'rgba(255, 99, 132, 1)',
+          'rgba(255, 99, 132, 0.2)',          
+          'rgba(255, 99, 132, 0.2)',          
+          'rgba(255, 99, 132, 0.2)',          
+          'rgba(255, 99, 132, 0.2)',          
+          'rgba(255, 99, 132, 0.2)',          
+          'rgba(255, 99, 132, 0.2)',          
+          'rgba(255, 99, 132, 0.2)',    
+          'rgba(255, 99, 132, 0.2)',          
+          'rgba(255, 99, 132, 0.2)',          
+          'rgba(255, 99, 132, 0.2)',          
+          'rgba(255, 99, 132, 0.2)',          
+          'rgba(255, 99, 132, 0.2)',          
+          'rgba(255, 99, 132, 0.2)',          
+          'rgba(255, 99, 132, 0.2)',          
+          'rgba(255, 99, 132, 0.2)',          
+          'rgba(255, 99, 132, 0.2)',          
+          'rgba(255, 99, 132, 0.2)',          
+          'rgba(255, 99, 132, 0.2)',          
+          'rgba(255, 99, 132, 0.2)',          
+          'rgba(255, 99, 132, 0.2)',          
+      
 
         ],
         borderWidth: 1
@@ -167,9 +218,35 @@ function displaychart() {
       }, {
         label: 'total of views'+ `${totalview}`,
         data: views,
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.2)',          
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(255, 99, 132, 0.2)',
+
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(255, 99, 132, 0.2)',          
+          'rgba(255, 99, 132, 0.2)',          
+          'rgba(255, 99, 132, 0.2)',          
+          'rgba(255, 99, 132, 0.2)',          
+          'rgba(255, 99, 132, 0.2)',  
+
+
+        ],
 
       },
       ],
+      //one for clicks and one for views
       options: {
         scales: {
           yAxes: [{
@@ -183,37 +260,87 @@ function displaychart() {
   });
 }
 
-var sounds = [
-  new Audio("/audio/Blinding_Lights.mp3"),
-  new Audio("/sounds/Halsey-Graveyard.mp3"),
-];
+// var Song = function(artist, audio) {
+//   this.artist = artist;
+//     this.audio = audio;
+//     return this;
+//   };
+  
+//   Song.prototype = {
+//       playSound: function() {
+//       var audio = document.createElement('audio');
+//       audio.src = this.audio;
+//       audio.play();
+//       if (audio.play()== true) {
+//         helloSound.pause();
+//     } else {
+//         goodbyeSound.play();
+//     }
+//     }
+//   };
+  
+//   // Create animal objects
+//   var theweekend = new Song("blinding-light", "audio/Blinding_Lights.mp3"),
+//           Halsey = new Song("graveyard", "audio/Halsey-Graveyard.mp3"),
+     
+//    songs = [theweekend, Halsey];
+  
+//   function playRandomSong() {
+//        var sound = songs[Math.floor(Math.random() * songs.length)];
+//      sound.playSound();
 
- 
-url = 'audio/Halsey-Graveyard.mp3';
-const myAudio = new Audio(url);
+//   }
+// var btn=document.getElementById("btn");
+// btn.addEventListener("dblclick",function(){
+  
 
-var btn = document.getElementById('btn');
-btn.addEventListener('click', function () {
-  PlayFunc(myAudio, 3);
-});
-
-function PlayFunc(target, RepeatCount) {
-  var soundFunc = function () {
-    RepeatCount--;
-    target.currentTime = 0;
-    if (RepeatCount > 0) {
-      target.play();
-    }
-    else {
-      target.stop();
-      target.removeEventListener('ended', soundFunc);
-    }
+// })
+var songs=['Blinding_Lights.mp3','Halsey-Graveyard.mp3'];
+var song=new Audio();
+var currentSong=0;
+window.onload=playsong;
+function playsong()
+{
+  song.src="audio/"+songs[currentSong];
+  song.play();
+}
+function playorstopsong()
+{
+  if(song.paused)
+  {
+    song.play();
+    document.getElementById("plays").setAttribute("name","pause-circle-outline");
+  }
+  else
+  {
+    song.pause();
+    document.getElementById("plays").setAttribute("name","play-outline");
 
   }
-  target.addEventListener('ended', soundFunc)
-  target.play();
 }
-document.addEventListener('DOMContentLoaded', function() {
-  var elems = document.querySelectorAll('.carousel');
-  var instances = M.Carousel.init(elems, options);
+document.getElementById("play").addEventListener("click",playorstopsong);
+document.getElementById("next").addEventListener("click",next);
+document.getElementById("pre").addEventListener("click",prev);
+document.getElementById("play").addEventListener("dblclick",function(){
+  song.pause();
 });
+
+
+function next()
+{
+  currentSong++;
+  if(currentSong>2)
+  {
+    currentSong=0
+  }
+  playsong();
+}
+function prev()
+{
+  currentSong--;
+  if(currentSong<0)
+  {
+    currentSong=2;
+  }
+  playsong();
+}
