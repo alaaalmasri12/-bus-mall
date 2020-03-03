@@ -170,6 +170,7 @@ function displaychart() {
 
       },
       ],
+      //one for clicks and one for views
       options: {
         scales: {
           yAxes: [{
@@ -187,7 +188,6 @@ var sounds = [
   new Audio("/audio/Blinding_Lights.mp3"),
   new Audio("/sounds/Halsey-Graveyard.mp3"),
 ];
-
  
 url = 'audio/Halsey-Graveyard.mp3';
 const myAudio = new Audio(url);
