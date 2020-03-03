@@ -42,10 +42,14 @@ var products =
   }
 function savetrackvalue() {
  localStorage.setItem('total', totalview);
+ localStorage.setItem('totalclick', totalclicks);
+
 
 }
 function trackvalue() {
   localStorage.getItem('total');
+  localStorage.getItem('totalclick');
+
 
 }
 function updateproducts() //store object to jason
