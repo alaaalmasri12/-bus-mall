@@ -51,7 +51,9 @@ function trackvalue() {
   localStorage.getItem('totalclick');
 
 
+
 }
+//
 function updateproducts() //store object to jason
 {
   var product = JSON.stringify(products.all);
