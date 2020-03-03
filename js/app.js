@@ -4,6 +4,17 @@ var totalclicks=0;
 votes=[];
 views=[];
 var usedimages=[];
+var player=prompt("do you want to use player in ur web page");
+player.toLowerCase();
+if(player==="yes")
+{
+  document.getElementById("player").style.display="block";
+}
+else
+{
+  document.getElementById("player").style.display="none";
+
+}
 var products =
   [
 
@@ -36,15 +47,15 @@ var leftproduct = document.getElementById("leftproduct");
 var centerproduct = document.getElementById("centerproduct");
 var rightproduct = document.getElementById("rightproduct");
 var imagesection = document.querySelector(".products-container");
-// leftproduct.src = `assets/${products[0]}`;
-// leftproduct.alt = products[0].split(".",1);
-// leftproduct.title = products[0].split(".",1);
-// centerproduct.src = `assets/${products[1]}`;
-// centerproduct.alt = products[1].split(".",1);
-// centerproduct.title = products[1].split(".",1);
-// rightproduct.setAttribute('src', `assets/${products[2]}`);
-// rightproduct.setAttribute('alt', products[2]);
-// rightproduct.setAttribute('title', products[2]);
+leftproduct.src = `assets/${products[0]}`;
+leftproduct.alt = products[0].split(".",1);
+leftproduct.title = products[0].split(".",1);
+centerproduct.src = `assets/${products[1]}`;
+centerproduct.alt = products[1].split(".",1);
+centerproduct.title = products[1].split(".",1);
+rightproduct.setAttribute('src', `assets/${products[2]}`);
+rightproduct.setAttribute('alt', products[2]);
+rightproduct.setAttribute('title', products[2]);
 function Productitem(ProductName, imagePath, clicks, views) {
   this.ProductName = ProductName;
   this.imagePath = `assets/${this.ProductName}`;
@@ -65,15 +76,15 @@ function render() {
   centerp = products.all[randomnumber(0, products.all.length - 1)];
 
   rightp = products.all[randomnumber(0, products.all.length - 1)];
-  while ((leftp === rightp) || (leftp === centerp) || (centerp === rightp) || (centerp === leftp)||usedimages.includes(leftp)||usedimages.includes(centerp)||usedimages.includes(rightp)) {
+  while ((leftp === rightp) || (leftp === centerp) || (centerp === rightp) || (centerp === leftp)) {
     console.log("code is executed");
-    leftp = products.all[randomnumber(0, products.all.length - 1)];
+    render();
 
-    centerp = products.all[randomnumber(0, products.all.length - 1)];
-  
-    rightp = products.all[randomnumber(0, products.all.length - 1)];
   }
-
+while(usedimages.includes(leftp)||usedimages.includes(centerp)||usedimages.includes(rightp))
+{
+  rend
+}
   usedimages=[];
   usedimages.push(leftp.ProductName);
   usedimages.push(centerp.ProductName);
@@ -220,26 +231,27 @@ function displaychart() {
         data: views,
         backgroundColor: [
           'rgba(255, 99, 132, 0.2)',          
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(255, 99, 132, 0.2)',
+          'rgba(255, 99, 132, 0.2)',          
+          'rgba(255, 99, 132, 0.2)',          
+          'rgba(255, 99, 132, 0.2)',          
+          'rgba(255, 99, 132, 0.2)',          
+          'rgba(255, 99, 132, 0.2)',          
 
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(255, 99, 132, 0.2)',
+          'rgba(255, 99, 132, 0.2)',          
           'rgba(255, 99, 132, 0.2)',          
           'rgba(255, 99, 132, 0.2)',          
           'rgba(255, 99, 132, 0.2)',          
           'rgba(255, 99, 132, 0.2)',          
           'rgba(255, 99, 132, 0.2)',  
+          'rgba(255, 99, 132, 0.2)',          
+          'rgba(255, 99, 132, 0.2)',          
+          'rgba(255, 99, 132, 0.2)',          
+          'rgba(255, 99, 132, 0.2)',          
+          'rgba(255, 99, 132, 0.2)',          
+          'rgba(255, 99, 132, 0.2)',          
+          'rgba(255, 99, 132, 0.2)',          
+          'rgba(255, 99, 132, 0.2)',          
+        
 
 
         ],
@@ -271,30 +283,7 @@ function displaychart() {
 //       var audio = document.createElement('audio');
 //       audio.src = this.audio;
 //       audio.play();
-//       if (audio.play()== true) {
-//         helloSound.pause();
-//     } else {
-//         goodbyeSound.play();
-//     }
-//     }
-//   };
-  
-//   // Create animal objects
-//   var theweekend = new Song("blinding-light", "audio/Blinding_Lights.mp3"),
-//           Halsey = new Song("graveyard", "audio/Halsey-Graveyard.mp3"),
-     
-//    songs = [theweekend, Halsey];
-  
-//   function playRandomSong() {
-//        var sound = songs[Math.floor(Math.random() * songs.length)];
-//      sound.playSound();
 
-//   }
-// var btn=document.getElementById("btn");
-// btn.addEventListener("dblclick",function(){
-  
-
-// })
 var songs=['Blinding_Lights.mp3','Halsey-Graveyard.mp3'];
 var song=new Audio();
 var currentSong=0;
