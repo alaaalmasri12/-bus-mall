@@ -126,7 +126,7 @@ function render() {
 render();
 imagesection.addEventListener("click", handleClickOnProduct);
 function handleClickOnProduct(event) {
-  savetrackvalue()
+  savetrackvalue();
   trackvalue();
   if (totalview < 25) {
     if (event.target.id !== 'products-container') {
