@@ -1,113 +1,82 @@
-<html>
-    <head>
-    <meta charset="UTF-8"><style data-styles="">ion-icon{visibility:hidden}.hydrated{visibility:inherit}</style>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="bus mall display 3 products">
-    <meta name="keywords" content="store products items ">
-    <meta name="author" content="Alaa alamsri">
-    <title>Bus mall</title>
-    <link rel="stylesheet" href="css/style.css" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Anton&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Buss Mall</title>
+</head>
 
 <body>
     <header>
-        <div class="star1"></div>
-        <div class="outer-box">
-            <div class="inner-box">
-                <div class="logo-block">
-                    <h1>Bus<br> Mall<br> Voting</h1>
-                </div>
-            </div>
-
-        </div>
-        <div class="star2"></div>
-
-        <div class="navbar">
-            <ul class="main-nav">
-                <li class="first"><a href="#">ELECTORNIC<ion-icon name="chevron-down-outline" role="img" class="md hydrated" aria-label="chevron down outline"></ion-icon></a></li>
-                <li class="color2"><a href="#">Games<ion-icon name="chevron-down-outline" role="img" class="md hydrated" aria-label="chevron down outline"></ion-icon></a></li>
-                <li class="color3"><a href="#">CLOTHES<ion-icon name="chevron-down-outline" role="img" class="md hydrated" aria-label="chevron down outline"></ion-icon></a></li>
-                <li class="color4"><a href="#">ACCESSORIES<ion-icon name="chevron-down-outline" role="img" class="md hydrated" aria-label="chevron down outline"></ion-icon></a></li>
-                 <li class="last"><a href="#">TOYS<ion-icon name="chevron-down-outline" role="img" class="md hydrated" aria-label="chevron down outline"></ion-icon></a></li>
-
+        <nav>
+            <ul>
+                <img id="logo" src="https://via.placeholder.com/150x100/ddd" alt="logo" srcset="">
+                <li>
+                    <h2>Title</h2>
+                </li>
+                <li><a href="shoppingMain.html">Shop</a></li>
             </ul>
-        
-      
-        
-    </div>
-    <div id="player">
-    <div id="bg">
-            <img src="assets/header1.jpg">
-    </div>
-    <div id="main">
-       
-            <div id="songTitle">
-                    <div id="buttons">
-                        <button id="pre" class="player"><ion-icon name="play-back-outline"></ion-icon></button>
-                        <button id="play" class="player"><ion-icon id="plays" name="play-outline"></ion-icon></button>
-                        <button id="next" class="player"><ion-icon name="play-forward-outline"></ion-icon></button>
-                    </div>
-            </div>
-        </div>
-    </div>
-
+        </nav>
     </header>
     <main>
-        <div class="main-content">
-            <div class="video">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/ukCW9vLNdxc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
-            </div>
-            <div class="catagory">
-                <h1>SELECT A CATEGORY</h1>
-                <div class="catagory-item" id="box1" style="border-bottom: 1px solid skyblue;            ">
-                    <div class="catagory-title">
-                        <h2>ELECTORNIC</h2>
-                    </div>
-                </div>
-                <div class="catagory-item" id="box2" style="border-bottom: 1px solid #09d7a7;">
-                    <div class="catagory-title">
-                        <h2>Games</h2>
-                    </div>
-                </div>
-                <div class="second-row-catgory">
-                    <div class="catagory-item" id="box3" style="border-bottom: 1px solid #ca49c7;">
-                        <div class="catagory-title">
-                            <h2>ACCESSORIES</h2>
-                        </div>
-                    </div>
-                    <div class="catagory-item" id="box4" style="border-bottom: 1px solid #ff7062;">
-                        <div class="catagory-title">
-                            <h2>Toys</h2>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-       <section class="products-container">
-       <div class="best-product">
-           <h1>Vote for your best Product</h1>
-       </div>
-        <div class="product-box">
-            <img src="assets/scissors.jpg" id="leftproduct" class="product1" alt="scissors.jpg" title="scissors.jpg">
-        </div>
-        <div class="product-box">
-            <img src="assets/usb.gif" id="centerproduct" class="product2" alt="usb.gif" title="usb.gif">
-        </div>
-        <div class="product-box">
-            <img src="assets/water-can.jpg" id="rightproduct" class="product3" alt="undefined" title="undefined">
-        </div>
-        
-    </section>
-    <ul id="summary">
-<h1>The Result is:</h1>
-    </ul>
-        </div>
- 
+        <article>
+            <!-- <div id="result">
+                Results: </div> -->
+               
+
+            <section id="imageHolder">
+
+                <img class="selectors" id="rightImage" src="" alt="">
+                <img class="selectors" id="middleImage" src="" alt="">
+                <img class="selectors" id="leftImage" src="" alt="">
+
+
+            </section>
+
+            <canvas id="myChart" width="400" height="400"></canvas>
+            <!-- <h5 id="paragraph">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat quia debitis provident delectus ipsum
+                vel aut commodi, minus dignissimos illo sint, eaque, neque est deleniti. Ipsum eos ad alias voluptatum.
+                Porro, eos velit blanditiis molestias consequuntur eligendi eius optio cumque ab dignissimos aperiam
+                exercitationem atque magnam pariatur temporibus in provident totam tenetur harum! Dignissimos
+                consectetur hic officia, in ut animi.
+                Quod velit obcaecati doloribus voluptatem provident ad enim numquam eius excepturi tempora sint eaque
+                iure corrupti quae impedit mollitia, assumenda officia consequuntur dolorem? Autem natus dolores,
+                aperiam reprehenderit qui incidunt!
+                Quia ipsum voluptas aspernatur quasi, officia nulla reprehenderit, alias distinctio consectetur corporis
+                illum perspiciatis numquam repudiandae, ab a non ata, in ut animi.
+                Quod velit obcaecati doloribus voluptatem provident ad enim numquam eius excepturi tempora sint eaque
+                iure corrupti quae impedit mollitia, assumenda officia consequuntur dolorem? Autem natus dolores,
+                aperiam reprehenderit qui incidunt!
+                Quia ipsum voluptas aspernatur quasi, officia nulla reprehenderit, alias distinctio consectetur corporis
+                illum perspiciatis numquam repudiandae, ab a non ata, in ut animi.
+                Quod velit obcaecati doloribus voluptatem provident ad enim numquam eius excepturi tempora sint eaque
+                iure corrupti quae impedit mollitia, assumenda officia consequuntur dolorem? Autem natus dolores,
+                aperiam reprehenderit qui incidunt!
+                Quia ipsum voluptas aspernatur quasi, officia nulla reprehenderit, alias distinctio consectetur corporis
+                illum perspiciatis numquam repudiandae, ab a non at amet id eaque explicabo! Quam rerum distinctio et
+                earum voluptatum.
+                Assumenda nam quas tenetur sequi reprehenderit, iure voluptas, debitis aliquam necessitatibus nobis
+                libero ex laborum. Tempore ex itaque necessitatibus aperiam, libero, ipsa aliquam suscipit corporis in
+                sed labore, laudantium nobis.
+                Nam incimaxime delectus laborum perferendis consequuntur sequi ipsa facere blanditiis molestiae quod
+                sint sunt in rerum. Architecto quae adipisci tenetur earum quasi facere explicabo.
+                Aliquid quo mollitia ea tenetur distinctio. Illum voluptatum quaerat hic magni ex corrupti dicta modi
+                cumque! Iure ducimus et molestias corrupti ab accusamus veniam, commodi fugit aspernatur recusandae
+                alias consequuntur?
+            </h5> -->
+
+        </article>
     </main>
     <footer>
-        <canvas id="myChart" width="400" height="200"></canvas>
 
+        <img id="footer" src="https://via.placeholder.com/1200x200/ddd" alt="">
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script> 
     <script src="js/app.js"></script>
+</body>
+
+</html>
